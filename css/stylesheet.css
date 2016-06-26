@@ -1,0 +1,386 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Ruda:400,700,900);
+
+@font-face {
+  font-family: 'Origicide';
+  src: url('../fonts/origicide-webfont.eot');
+  src: url('../fonts/origicide-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/origicide-webfont.woff2') format('woff2'),
+  url('../fonts/origicide-webfont.woff') format('woff'),
+  url('../fonts/origicide-webfont.ttf') format('truetype'),
+  url('../fonts/origicide-webfont.svg#origicideregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "heroes";
+  src:url("../fonts/heroes.eot");
+  src:url("../fonts/heroes.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/heroes.woff") format("woff"),
+    url("../fonts/heroes.ttf") format("truetype"),
+    url("../fonts/heroes.svg#mtg-mobile") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.ha {
+   font-family: "heroes";
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 1;
+  speak: none;
+  text-transform: none
+}
+
+.ha-warcraft:before {
+  content: "\E600";
+}
+
+.label-deathknight {
+  color: #C41F3B;
+  border-color: #C41F3B;
+}
+
+.label-druid {
+  color: #FF7D0A;
+  border-color: #FF7D0A;
+}
+
+.label-hunter {
+  color: #ABD473;
+  border-color: #ABD473;
+}
+
+.label-mage {
+  color: #69CCF0;
+  border-color: #69CCF0;
+}
+
+.label-monk {
+  color: #00FF96;
+  border-color: #00FF96;
+}
+
+.label-paladin {
+  color: #F58CBA;
+  border-color: #F58CBA;
+}
+
+.label-priest {
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+.label-rogue {
+  color: #FFF569;
+  border-color: #FFF569;
+}
+
+.label-shaman {
+  color: #0070DE;
+  border-color: #0070DE;
+}
+
+.label-warlock {
+  color: #9482C9;
+  border-color: #9482C9;
+}
+
+.label-warrior {
+  color: #C79C6E;
+  border-color: #C79C6E;
+}
+
+.label-demonhunter {
+  color: #A330C9;
+  border-color: #A330C9;
+}
+
+.label-uncommon {
+  background-color: #1EFF00;
+  border-color: #1EFF00;
+}
+
+.label-rare {
+  background-color: #0070DD;
+  border-color: #0070DD;
+}
+
+.label-epic {
+  background-color: #A335EE;
+  border-color: #A335EE;
+}
+
+.label-legendary {
+  background-color: #ff8000;
+  border-color: #ff8000;
+}
+
+.label-warn {
+  color: #E92828;
+}
+
+.p-y-10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.p-b-10 {
+  padding-bottom: 10px;
+}
+
+body {
+  padding-top: 50px;
+  min-height: 1200px;
+  font-family: "Ruda";
+  color: #f1f1f1;
+  background-color: #272727;
+}
+
+.navbar-default {
+  background-color: #333;
+  border-color: #333;
+}
+
+.navbar-default .navbar-toggle {
+  border: none;
+  color: #f1f1f1;
+}
+
+.navbar-default .navbar-collapse {
+  border-color: #222;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #333;
+}
+
+.navbar-default .navbar-brand {
+  font-family: "Origicide";
+  color: #f1f1f1;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in; 
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+  color: #0091E4;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #f1f1f1;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in; 
+}
+
+.navbar-default .navbar-nav > li > a:focus {
+  color: #f1f1f1;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a.active {
+  color: #0091E4;
+}
+
+/*Lightbox CSS*/
+.image {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.image-link {
+  display: inline-block;
+  padding: 2px;
+  margin: 0 0.5rem 1rem 0.5rem;
+  background-color: #333;
+  line-height: 0;
+  border-radius: 4px;
+  transition: background-color 0.5s ease-out;
+}
+
+.image-link:hover, .image-link:focus {
+  background-color: #0091E4;
+  transition: none;
+}
+
+/*Section CSS*/
+.section-title {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.section-subtitle {
+  font-weight: 800;
+  color: #767676;
+  text-transform: uppercase;
+}
+
+#splash {
+  width: 100%;
+}
+
+#splash .background {
+  height: 400px;
+  width: 100%;
+  background-image: url('../img/banner_background.jpg');
+  background-position: center;
+}
+
+#splash .title {
+  font-family: 'Origicide', Arial, sans-serif;
+  font-size: 6em;
+  margin-top: 0.2em;
+  margin-bottom: 0.1em;
+  padding-left: 15px;
+  z-index: 2;
+}
+
+#splash .subtitle {
+  font-family: 'Origicide', Arial, sans-serif;
+  font-size: 2em;
+  margin-top: 0;
+  margin-bottom: 1em;
+  padding-left: 15px;
+  color: #0091E4;
+  z-index: 2;
+}
+
+#splash .schedule {
+  padding-left: 15px;
+  font-weight: 600;
+  z-index: 2;
+  font-size: 25px;
+}
+
+#splash .status {
+  font-size: 22px;
+}
+
+#splash .info {
+  background-color: #f2f2f2;
+  padding: 2rem;
+  color: #000;
+}
+
+#splash .well {
+  background-color: #222;
+  padding: 0;
+  border: none;
+}
+
+.raid-banner {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 121px;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.raid-banner.highmaul {
+  background-image: url(../img/highmaul_screen.png);
+}
+
+.raid-banner.brf {
+  background-image: url(../img/brf_screen.png);
+}
+
+.raid-banner.hfc {
+  background-image: url(../img/hfc_screen.png);
+}
+
+.raid-difficulty {
+  color: #f1f1f1;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.progress {
+  margin-bottom: 10px;
+}
+
+.wow-progress i {
+  font-size: 4rem;
+  float: left;
+  margin: 1rem;
+  color: #333;
+}
+
+.wow-progress h5 {
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: #767676;
+  text-transform: uppercase;
+}
+
+#guild {
+  height: 900px;
+}
+
+#raiding {
+  height: 900px;
+  background-color: #222;
+}
+
+#community {
+  height: 900px;
+}
+
+#recruiting {
+  height: 900px;
+  background-color: #222;
+}
+
+/*Tablet Scale*/
+@media (max-width: 767px) {
+  #splash .background {
+    height: 350px;
+  }
+}
+
+/*Phone Scale*/
+@media (max-width: 484px) {
+  #splash .background {
+    background-position: 60% 23%;
+    height: 180px;
+  }
+  #splash .title, #splash .subtitle {
+    display: none;
+  }
+  .raid-banner {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 4px;
+  }
+}
+
+/*Scroll to Top CSS*/
+.scroll-to-top {  
+  display:none;
+  color: #fff;
+  display: block;
+  cursor: pointer;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+  background: #333;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+  border-radius: 4px;
+  z-index: 9999;
+}
+
+.scroll-to-top:hover, .scroll-to-top:focus {
+  color: #fff;
+}
+
+/*Discord Widget CSS*/
+#discord-widget .widget-header {
+  background-color: #0091E4;
+}
