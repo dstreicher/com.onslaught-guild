@@ -319,27 +319,71 @@ body {
 }
 
 #guild {
-  height: 900px;
+  padding: 2rem;
+}
+
+#guild .text-container {
+  line-height: 318px;
+  height: 318px;
+}
+
+#guild .text-container h5 {
+  font-size: 2rem;
+  vertical-align: middle;
+  display: inline-block;
+  border-bottom: 1px solid #767676;
+  padding-bottom: 10px;
+}
+
+#guild .text-container i {
+  font-size: 4rem;
+  color: #767676;
 }
 
 #raiding {
-  height: 900px;
+  padding: 2rem;
+  height: 900px; 
   background-color: #222;
 }
 
 #community {
+  padding: 2rem;
   height: 900px;
 }
 
 #recruiting {
+  padding: 2rem;
   height: 900px;
   background-color: #222;
+}
+
+/*Large Desktop Scale*/
+@media (max-width: 1199px) {
+  #guild .text-container {
+    line-height: 262px;
+    height: 262px;
+  }
+}
+
+/*Small Desktop Scale*/
+@media (max-width: 991px) {
+  #guild .text-container {
+    line-height: 200px;
+    height: 200px;
+  }
+  #guild .text-container h5 {
+    font-size: 1.8rem;
+  }
 }
 
 /*Tablet Scale*/
 @media (max-width: 767px) {
   #splash .background {
     height: 350px;
+  }
+  .raid-banner {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 4px;
   }
 }
 
@@ -351,10 +395,6 @@ body {
   }
   #splash .title, #splash .subtitle {
     display: none;
-  }
-  .raid-banner {
-    border-bottom-left-radius: 0;
-    border-top-right-radius: 4px;
   }
 }
 
