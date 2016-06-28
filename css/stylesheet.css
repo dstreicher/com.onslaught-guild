@@ -365,12 +365,20 @@ body {
   background-repeat: no-repeat;
 }
 
-#community .discord-btn {
+.discord-btn {
   background-color: #738bd7;
   padding: 10px 15px;
   font-size: 18px;
   line-height: 1.33;
   border-radius: 4px;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.discord-btn:hover, .discord-btn:focus {
+  background-color: #0091E4;
 }
 
 #community p, #recruiting p {
