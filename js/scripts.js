@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+  lightbox.option({
+    'resizeDuration': 300,
+    'fadeDuration': 200
+  });
+
   var $scrollToTop = $('.scroll-to-top');
   $scrollToTop.hide();
   $(window).scroll(function () {

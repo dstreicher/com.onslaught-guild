@@ -124,6 +124,10 @@
   color: #E92828;
 }
 
+.p-t-20 {
+  padding-top: 20px;
+}
+
 .p-y-10 {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -328,10 +332,9 @@ body {
 }
 
 #guild .text-container h5 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   vertical-align: middle;
   display: inline-block;
-  border-bottom: 1px solid #767676;
   padding-bottom: 10px;
 }
 
@@ -342,19 +345,129 @@ body {
 
 #raiding {
   padding: 2rem;
-  height: 900px; 
   background-color: #222;
+  background-image: url(../img/raiding_bg.png);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+#raiding .raid-time {
+  color: #222;
+  font-weight: 700;
+}
+
+#raiding .text {
+  font-size: 1.5rem;
 }
 
 #community {
-  padding: 2rem;
-  height: 900px;
+  padding: 2rem 2rem 5rem 2rem;
+}
+
+#community .discord-btn {
+  background-color: #738bd7;
+  padding: 10px 15px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 4px;
+}
+
+#community p, #recruiting p {
+  font-size: 1.5rem;
 }
 
 #recruiting {
   padding: 2rem;
-  height: 900px;
   background-color: #222;
+}
+
+#recruiting .well {
+  background-color: #272727;
+  padding: 0px;
+  border: none;
+}
+
+#recruiting .well.recruitment {
+  width: 256px;
+  height: 100px;
+}
+
+#recruiting .well.recruitment .spec-col {
+  margin-top: 7px;
+}
+
+#recruiting .well.recruitment .label {
+  font-size: 14px;
+}
+
+.crest {
+  display: inline-block;
+  height: 100px;
+  width: 84px;
+  margin-left: 5px;
+  background-size: cover;
+}
+
+.crest.paladin {
+    background-image: url(../img/paladin_crest.png);
+}
+
+.crest.deathknight {
+    background-image: url(../img/death_knight_crest.png);
+}
+
+.crest.druid {
+    background-image: url(../img/druid_crest.png);
+}
+
+.crest.hunter {
+    background-image: url(../img/hunter_crest.png);
+}
+
+.crest.mage {
+    background-image: url(../img/mage_crest.png);
+}
+
+.crest.priest {
+    background-image: url(../img/priest_crest.png);
+}
+
+.crest.monk {
+    background-image: url(../img/monk_crest.png);
+}
+
+.crest.warrior {
+    background-image: url(../img/warrior_crest.png);
+}
+
+.crest.rogue {
+    background-image: url(../img/rogue_crest.png);
+}
+
+.crest.warlock {
+    background-image: url(../img/warlock_crest.png);
+}
+
+.crest.shaman {
+    background-image: url(../img/shaman_crest.png);
+}
+
+.crest.demonhunter {
+    background-image: url(../img/demon_hunter_crest.png);
+}
+
+#footer {
+  height: 150px;
+  background-color: #f1f1f1;
+}
+
+#footer .container {
+  background-color: #f1f1f1;
+  color: #222;
+}
+
+#footer .image {
+  width: 42px;
 }
 
 /*Large Desktop Scale*/
@@ -372,7 +485,7 @@ body {
     height: 200px;
   }
   #guild .text-container h5 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -385,6 +498,9 @@ body {
     border-bottom-left-radius: 0;
     border-top-right-radius: 4px;
   }
+  #community .discord-frame {
+    display: none;
+  }
 }
 
 /*Phone Scale*/
@@ -394,6 +510,9 @@ body {
     height: 180px;
   }
   #splash .title, #splash .subtitle {
+    display: none;
+  }
+  #community .discord-frame {
     display: none;
   }
 }
