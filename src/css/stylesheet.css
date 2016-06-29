@@ -13,33 +13,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: "heroes";
-  src:url("../fonts/heroes.eot");
-  src:url("../fonts/heroes.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/heroes.woff") format("woff"),
-    url("../fonts/heroes.ttf") format("truetype"),
-    url("../fonts/heroes.svg#mtg-mobile") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-.ha {
-   font-family: "heroes";
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 400;
-  line-height: 1;
-  speak: none;
-  text-transform: none
-}
-
-.ha-warcraft:before {
-  content: "\E600";
-}
-
 .label-deathknight {
   color: #C41F3B;
   border-color: #C41F3B;
@@ -169,7 +142,7 @@ body {
   -moz-transition: all .2s ease-in;
   -o-transition: all .2s ease-in;
   -webkit-transition: all .2s ease-in;
-  transition: all .2s ease-in; 
+  transition: all .2s ease-in;
 }
 
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
@@ -181,7 +154,7 @@ body {
   -moz-transition: all .2s ease-in;
   -o-transition: all .2s ease-in;
   -webkit-transition: all .2s ease-in;
-  transition: all .2s ease-in; 
+  transition: all .2s ease-in;
 }
 
 .navbar-default .navbar-nav > li > a:focus {
@@ -519,7 +492,7 @@ body {
 }
 
 /*Scroll to Top CSS*/
-.scroll-to-top {  
+.scroll-to-top {
   display:none;
   color: #fff;
   display: block;
