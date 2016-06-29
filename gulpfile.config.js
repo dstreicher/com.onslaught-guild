@@ -13,7 +13,10 @@ var config = {
     dest: 'dist/',
     globs: {
       css: ['css/*.css'],
-      js: ['js/*.js']
+      sprites: ['img/sprites/*.png'],
+      images: ['img/*.{png,jpg,gif}'],
+      js: ['js/*.js'],
+      fonts: ['fonts/*.{eot,svg,ttf,woff,woff2}']
     },
     paths: {
       index: 'index.template.html'

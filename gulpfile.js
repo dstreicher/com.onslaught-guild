@@ -5,6 +5,7 @@ var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
 var sass = require('gulp-sass');
 var spritesmith = require('gulp.spritesmith');
+var imagemin = require('gulp-imagemin');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var replace = require('gulp-replace');
@@ -12,6 +13,7 @@ var gulpif = require('gulp-if');
 var uglify = require('gulp-uglify');
 var cleanCSS = require('gulp-clean-css');
 var merge = require('merge-stream');
+var buffer = require('vinyl-buffer');
 var config = require('./gulpfile.config');
 
 gulp.task('default', ['build']);
@@ -22,36 +24,54 @@ gulp.task('build-html', ['clean', 'copy'], buildHTML);
 gulp.task('copy', ['clean'], copy);
 gulp.task('clean', clean);
 
-function clean(done) {
-  del(config.site.dest + '**/*');
-  done();
+function clean() {
+  return del(config.site.dest + '**/*');
 }
 
-function copy(done) {
-  done();
+function copy() {
+  var images = gulp.src(config.site.globs.images, { cwd: config.site.src })
+    .pipe(gulpif(!argv.dev, imagemin()))
+    .pipe(gulp.dest(config.site.dest + 'img/'));
+
+  var fonts = gulp.src(config.site.globs.fonts, { cwd: config.site.src })
+    .pipe(gulp.dest(config.site.dest + 'fonts/'));
+
+  return merge(images, fonts);
 }
 
-function buildCSS(done) {
-  gulp.src(config.site.globs.css, { cwd: config.site.src })
+function buildCSS() {
+  var spriteData = gulp.src(config.site.globs.sprites, { cwd: config.site.src })
+    .pipe(spritesmith({
+      imgName: '../img/spritesheet.png',
+      cssName: 'spritesheet.css'
+    }));
+
+  var spritesheet = spriteData.img
+    .pipe(gulpif(!argv.dev, buffer()))
+    .pipe(gulpif(!argv.dev, imagemin()))
+    .pipe(gulp.dest(config.site.dest + 'img/'))
+
+  var css = merge(spriteData.css, gulp.src(config.site.globs.css, { cwd: config.site.src }))
     .pipe(concat('styles.css'))
     .pipe(autoprefixer())
     .pipe(gulpif(!argv.dev, cleanCSS({ compatibility: 'ie8' })))
     .pipe(gulpif(!argv.dev, rename({ suffix: '.' + config.revision, extname: '.min.css' })))
     .pipe(gulp.dest(config.site.dest + 'css/'));
-  done();
+
+  return merge(spritesheet, css);
+
 }
 
-function buildJS(done) {
-  gulp.src(config.site.globs.js, { cwd: config.site.src })
+function buildJS() {
+  return gulp.src(config.site.globs.js, { cwd: config.site.src })
     .pipe(concat('scripts.js'))
     .pipe(gulpif(!argv.dev, uglify()))
     .pipe(gulpif(!argv.dev, rename({ suffix: '.' + config.revision, extname: '.min.js' })))
     .pipe(gulp.dest(config.site.dest + 'js/'));
-  done();
 }
 
-function buildHTML(done) {
-  gulp.src(config.site.paths.index, { cwd: config.site.src })
+function buildHTML() {
+  return gulp.src(config.site.paths.index, { cwd: config.site.src })
     .pipe(gulpif(!argv.dev,
       replace('$js_ext', config.revision + '.min.js'),
       replace('$js_ext', 'js')))
@@ -60,5 +80,4 @@ function buildHTML(done) {
       replace('$css_ext', 'css')))
     .pipe(rename('index.html'))
     .pipe(gulp.dest(config.site.dest));
-  done();
 }

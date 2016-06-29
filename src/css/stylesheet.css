@@ -383,59 +383,8 @@ body {
 }
 
 .crest {
-  display: inline-block;
-  height: 100px;
-  width: 84px;
-  margin-left: 5px;
-  background-size: cover;
-}
-
-.crest.paladin {
-    background-image: url(../img/paladin_crest.png);
-}
-
-.crest.deathknight {
-    background-image: url(../img/death_knight_crest.png);
-}
-
-.crest.druid {
-    background-image: url(../img/druid_crest.png);
-}
-
-.crest.hunter {
-    background-image: url(../img/hunter_crest.png);
-}
-
-.crest.mage {
-    background-image: url(../img/mage_crest.png);
-}
-
-.crest.priest {
-    background-image: url(../img/priest_crest.png);
-}
-
-.crest.monk {
-    background-image: url(../img/monk_crest.png);
-}
-
-.crest.warrior {
-    background-image: url(../img/warrior_crest.png);
-}
-
-.crest.rogue {
-    background-image: url(../img/rogue_crest.png);
-}
-
-.crest.warlock {
-    background-image: url(../img/warlock_crest.png);
-}
-
-.crest.shaman {
-    background-image: url(../img/shaman_crest.png);
-}
-
-.crest.demonhunter {
-    background-image: url(../img/demon_hunter_crest.png);
+  margin-left: 15px;
+  margin-top: 3px;
 }
 
 #footer {
@@ -471,6 +420,8 @@ body {
   .raid-banner {
     border-bottom-left-radius: 0;
     border-top-right-radius: 4px;
+    background-size: 100%;
+    background-position: 0 -75px;
   }
   #community .discord-frame {
     display: none;
@@ -479,6 +430,10 @@ body {
 
 /*Phone Scale*/
 @media (max-width: 484px) {
+  .raid-banner {
+    background-size: 100% 100%;
+    background-position: inherit;
+  }
   #splash .background {
     background-position: 60% 23%;
     height: 180px;
