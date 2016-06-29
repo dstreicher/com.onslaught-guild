@@ -21,6 +21,9 @@ var config = {
     paths: {
       index: 'index.template.html'
     }
+  },
+  autoprefixer: {
+    browsers: ['last 2 versions']
   }
 };
 

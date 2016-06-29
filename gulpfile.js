@@ -53,7 +53,7 @@ function buildCSS() {
 
   var css = merge(spriteData.css, gulp.src(config.site.globs.css, { cwd: config.site.src }))
     .pipe(concat('styles.css'))
-    .pipe(autoprefixer())
+    .pipe(autoprefixer(config.autoprefixer))
     .pipe(gulpif(!argv.dev, cleanCSS({ compatibility: 'ie8' })))
     .pipe(gulpif(!argv.dev, rename({ suffix: '.' + config.revision, extname: '.min.css' })))
     .pipe(gulp.dest(config.site.dest + 'css/'));

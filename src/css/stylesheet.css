@@ -139,9 +139,6 @@ body {
 .navbar-default .navbar-brand {
   font-family: "Origicide";
   color: #f1f1f1;
-  -moz-transition: all .2s ease-in;
-  -o-transition: all .2s ease-in;
-  -webkit-transition: all .2s ease-in;
   transition: all .2s ease-in;
 }
 
@@ -151,9 +148,6 @@ body {
 
 .navbar-default .navbar-nav > li > a {
   color: #f1f1f1;
-  -moz-transition: all .2s ease-in;
-  -o-transition: all .2s ease-in;
-  -webkit-transition: all .2s ease-in;
   transition: all .2s ease-in;
 }
 
@@ -344,9 +338,6 @@ body {
   font-size: 18px;
   line-height: 1.33;
   border-radius: 4px;
-  -moz-transition: all .2s ease-in;
-  -o-transition: all .2s ease-in;
-  -webkit-transition: all .2s ease-in;
   transition: all .2s ease-in;
 }
 
