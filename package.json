@@ -1,6 +1,6 @@
 {
   "name": "com.onslaught-guild",
-  "description": "single page website for onslaught",
+  "description": "A single page website for Onslaught.",
   "version": "1.0.0",
   "devDependencies": {
     "del": "2.2.1",
