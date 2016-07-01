@@ -97,24 +97,20 @@ $secondary: #767676;
   @include label-color($demonhunter);
 }
 
-.label-uncommon {
-  @include label-color($uncommon);
+.uncommon-bg {
+  background-color: $uncommon;
 }
 
-.label-rare {
-  @include label-color($rare);
+.rare-bg {
+  background-color: $rare;
 }
 
-.label-epic {
-  @include label-color($epic);
+.epic-bg {
+  background-color: $epic;
 }
 
-.label-legendary {
-  @include label-color($legendary);
-}
-
-.label-warn {
-  @include label-color($warning);
+.legendary-bg {
+  background-color: $legendary;
 }
 
 .p-t-20 {
@@ -371,14 +367,12 @@ body {
 }
 
 #footer {
-  height: 150px;
+  height: 250px;
   background-color: $light;
   .container {
+    padding-top: 60px;
     background-color: $light;
     color: $gray-dark;
-  }
-  .image {
-    width: 42px;
   }
 }
 
@@ -405,6 +399,9 @@ body {
     background-position: 0 -75px;
   }
   #community .discord-frame {
+    display: none;
+  }
+  #footer .icon-links {
     display: none;
   }
 }
