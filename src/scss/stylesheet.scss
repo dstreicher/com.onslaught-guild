@@ -22,8 +22,8 @@ $black: #000000;
 
 $light: #f1f1f1;
 $dark: #272727;
-$dark222: #222222;
-$dark333: #333333;
+$gray-dark: #222222;
+$gray: #333333;
 $primary: #0091E4;
 $secondary: #767676;
 
@@ -139,44 +139,36 @@ body {
 }
 
 .navbar-default {
-  background-color: #333;
-  border-color: #333;
-}
-
-.navbar-default .navbar-toggle {
-  border: none;
-  color: $light;
-}
-
-.navbar-default .navbar-collapse {
-  border-color: #222;
-}
-
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background-color: #333;
-}
-
-.navbar-default .navbar-brand {
-  font-family: "Origicide";
-  color: $light;
-  transition: all .2s ease-in;
-}
-
-.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
-  color: $primary;
-}
-
-.navbar-default .navbar-nav > li > a {
-  color: $light;
-  transition: all .2s ease-in;
-}
-
-.navbar-default .navbar-nav > li > a:focus {
-  color: $light;
-}
-
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a.active {
-  color: $primary;
+  background-color: $gray;
+  border-color: $gray;
+  .navbar-toggle {
+    border: none;
+    color: $light;
+    &:hover, &:focus {
+      background-color: $gray;
+    }
+  }
+  .navbar-collapse {
+    border-color: $gray-dark;
+  }
+  .navbar-brand {
+    font-family: "Origicide";
+    color: $light;
+    transition: all .2s ease-in;
+    &:hover, &:focus {
+      color: $primary;
+    }
+  }
+  .navbar-nav > li > a {
+    color: $light;
+    transition: all .2s ease-in;
+    &:focus {
+      color: $light;
+    }
+    &:hover, &.active {
+      color: $primary;
+    }
+  }
 }
 
 /*Lightbox CSS*/
@@ -189,15 +181,14 @@ body {
   display: inline-block;
   padding: 2px;
   margin: 0 0.5rem 1rem 0.5rem;
-  background-color: #333;
+  background-color: $gray;
   line-height: 0;
   border-radius: 4px;
   transition: background-color 0.5s ease-out;
-}
-
-.image-link:hover, .image-link:focus {
-  background-color: $primary;
-  transition: none;
+  &:hover, &:focus {
+    background-color: $primary;
+    transition: none;
+  }
 }
 
 /*Section CSS*/
@@ -214,57 +205,50 @@ body {
 
 #splash {
   width: 100%;
-}
-
-#splash .background {
-  height: 400px;
-  width: 100%;
-  background-image: url('../img/banner_background.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-#splash .title {
-  font-family: 'Origicide', Arial, sans-serif;
-  font-size: 6em;
-  margin-top: 0.2em;
-  margin-bottom: 0.1em;
-  padding-left: 15px;
-  z-index: 2;
-  padding-top: 110px;
-}
-
-#splash .subtitle {
-  font-family: 'Origicide', Arial, sans-serif;
-  font-size: 2em;
-  margin-top: 0;
-  margin-bottom: 1em;
-  padding-left: 15px;
-  color: $primary;
-  z-index: 2;
-}
-
-#splash .schedule {
-  padding-left: 15px;
-  font-weight: 600;
-  z-index: 2;
-  font-size: 25px;
-}
-
-#splash .status {
-  font-size: 22px;
-}
-
-#splash .info {
-  background-color: #f2f2f2;
-  padding: 2rem;
-  color: #000;
-}
-
-#splash .well {
-  background-color: #222;
-  padding: 0;
-  border: none;
+  .background {
+    height: 400px;
+    width: 100%;
+    background-image: url('../img/banner_background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .title {
+    font-family: 'Origicide', Arial, sans-serif;
+    font-size: 6em;
+    margin-top: 0.2em;
+    margin-bottom: 0.1em;
+    padding-left: 15px;
+    z-index: 2;
+    padding-top: 110px;
+  }
+  .subtitle {
+    font-family: 'Origicide', Arial, sans-serif;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 1em;
+    padding-left: 15px;
+    color: $primary;
+    z-index: 2;
+  }
+  .schedule {
+    padding-left: 15px;
+    font-weight: 600;
+    z-index: 2;
+    font-size: 25px;
+  }
+  .status {
+    font-size: 22px;
+  }
+  .info {
+    background-color: #f2f2f2;
+    padding: 2rem;
+    color: #000;
+  }
+  .well {
+    background-color: $gray-dark;
+    padding: 0;
+    border: none;
+  }
 }
 
 .raid-banner {
@@ -273,18 +257,15 @@ body {
   height: 121px;
   border-bottom-left-radius: 4px;
   border-top-left-radius: 4px;
-}
-
-.raid-banner.highmaul {
-  background-image: url(../img/highmaul_screen.png);
-}
-
-.raid-banner.brf {
-  background-image: url(../img/brf_screen.png);
-}
-
-.raid-banner.hfc {
-  background-image: url(../img/hfc_screen.png);
+  &.highmaul {
+    background-image: url(../img/highmaul_screen.png);
+  }
+  &.brf {
+    background-image: url(../img/brf_screen.png);
+  }
+  &.hfc {
+    background-image: url(../img/hfc_screen.png);
+  }
 }
 
 .raid-difficulty {
@@ -297,52 +278,48 @@ body {
   margin-bottom: 10px;
 }
 
-.wow-progress i {
-  font-size: 4rem;
-  float: left;
-  margin: 1rem;
-  color: #333;
-}
-
-.wow-progress h5 {
-  font-weight: 800;
-  font-size: 1.3rem;
-  color: $secondary;
-  text-transform: uppercase;
+.wow-progress {
+  i {
+    font-size: 4rem;
+    float: left;
+    margin: 1rem;
+    color: $gray;
+  }
+  h5 {
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: $secondary;
+    text-transform: uppercase;
+  }
 }
 
 #guild {
   padding: 2rem;
-}
-
-#guild .text-container {
-  min-height: 200px;
-}
-
-#guild h5 {
-  font-size: 1.5rem;
-}
-
-#guild i {
-  font-size: 4rem;
-  color: $secondary;
+  .text-container {
+    min-height: 200px;
+  }
+  h5 {
+    font-size: 1.5rem;
+  }
+  i {
+    font-size: 4rem;
+    color: $secondary;
+  }
 }
 
 #raiding {
   padding: 2rem;
-  background-color: #222;
+  background-color: $gray-dark;
   background-image: url(../img/raiding_bg.png);
   background-position: right;
   background-repeat: no-repeat;
-}
-
-#raiding .raid-time {
-  color: #222;
-  font-weight: 700;
-}
-
-#raiding .text {
-  font-size: 1.5rem;
+   .raid-time {
+    color: $gray-dark;
+    font-weight: 700;
+  }
+  .text {
+    font-size: 1.5rem;
+  }
 }
 
 #community {
@@ -359,10 +336,9 @@ body {
   line-height: 1.33;
   border-radius: 4px;
   transition: all .2s ease-in;
-}
-
-.discord-btn:hover, .discord-btn:focus {
-  background-color: $primary;
+  &:hover, &:focus {
+    background-color: $primary;
+  }
 }
 
 #community p, #recruiting p {
@@ -371,26 +347,22 @@ body {
 
 #recruiting {
   padding: 2rem;
-  background-color: #222;
-}
-
-#recruiting .well {
-  background-color: $dark;
-  padding: 0px;
-  border: none;
-}
-
-#recruiting .well.recruitment {
-  width: 256px;
-  height: 100px;
-}
-
-#recruiting .well.recruitment .spec-col {
-  margin-top: 7px;
-}
-
-#recruiting .well.recruitment .label {
-  font-size: 14px;
+  background-color: $gray-dark;
+  .well {
+    background-color: $dark;
+    padding: 0px;
+    border: none;
+    &.recruitment {
+      width: 256px;
+      height: 100px;
+      .spec-col {
+        margin-top: 7px;
+      }
+      .label {
+        font-size: 14px;
+      }
+    }
+  }
 }
 
 .crest {
@@ -401,15 +373,13 @@ body {
 #footer {
   height: 150px;
   background-color: $light;
-}
-
-#footer .container {
-  background-color: $light;
-  color: #222;
-}
-
-#footer .image {
-  width: 42px;
+  .container {
+    background-color: $light;
+    color: $gray-dark;
+  }
+  .image {
+    width: 42px;
+  }
 }
 
 /*Large Desktop Scale*/
@@ -466,20 +436,14 @@ body {
   line-height: 40px;
   width: 40px;
   height: 40px;
-  background: #333;
+  background: $gray;
   position: fixed;
   bottom: 20px;
   right: 20px;
   text-align: center;
   border-radius: 4px;
   z-index: 9999;
-}
-
-.scroll-to-top:hover, .scroll-to-top:focus {
-  color: #fff;
-}
-
-/*Discord Widget CSS*/
-#discord-widget .widget-header {
-  background-color: $primary;
+  &:hover, &:focus {
+    color: #fff;
+  }
 }
