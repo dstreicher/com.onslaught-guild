@@ -24,6 +24,11 @@ var config = {
   },
   autoprefixer: {
     browsers: ['last 2 versions']
+  },
+  browserSync: {
+    server: {
+      baseDir: './dist/'
+    }
   }
 };
 

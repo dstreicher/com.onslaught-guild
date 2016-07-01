@@ -34,4 +34,4 @@ $(document).ready(function () {
     speed: 750,
     currentClass: 'active'
   });
-}); 
+});

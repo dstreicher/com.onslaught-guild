@@ -14,9 +14,11 @@ var uglify = require('gulp-uglify');
 var cleanCSS = require('gulp-clean-css');
 var merge = require('merge-stream');
 var buffer = require('vinyl-buffer');
+var browserSync = require('browser-sync').create();
 var config = require('./gulpfile.config');
 
 gulp.task('default', ['build']);
+gulp.task('serve', ['build'], serve);
 gulp.task('build', ['build-css', 'build-js', 'build-html']);
 gulp.task('build-css', ['clean', 'copy'], buildCSS);
 gulp.task('build-js', ['clean', 'copy'], buildJS);
@@ -25,7 +27,9 @@ gulp.task('copy', ['clean'], copy);
 gulp.task('clean', clean);
 
 function clean() {
-  return del(config.site.dest + '**/*');
+  if (!argv.sync) {
+    return del(config.site.dest + '**/*');
+  }
 }
 
 function copy() {
@@ -58,7 +62,8 @@ function buildCSS() {
     .pipe(gulpif(!argv.dev, rename({ suffix: '.' + config.revision, extname: '.min.css' })))
     .pipe(gulp.dest(config.site.dest + 'css/'));
 
-  return merge(spritesheet, css);
+  return merge(spritesheet, css)
+    .pipe(browserSync.stream());
 
 }
 
@@ -67,7 +72,8 @@ function buildJS() {
     .pipe(concat('scripts.js'))
     .pipe(gulpif(!argv.dev, uglify()))
     .pipe(gulpif(!argv.dev, rename({ suffix: '.' + config.revision, extname: '.min.js' })))
-    .pipe(gulp.dest(config.site.dest + 'js/'));
+    .pipe(gulp.dest(config.site.dest + 'js/'))
+    .pipe(browserSync.stream());
 }
 
 function buildHTML() {
@@ -79,5 +85,14 @@ function buildHTML() {
       replace('$css_ext', config.revision + '.min.css'),
       replace('$css_ext', 'css')))
     .pipe(rename('index.html'))
-    .pipe(gulp.dest(config.site.dest));
+    .pipe(gulp.dest(config.site.dest))
+    .pipe(browserSync.stream());
+}
+
+function serve() {
+  browserSync.init(config.browserSync);
+  gulp.watch(config.site.globs.css, { cwd: config.site.src }, ['build-css']);
+  gulp.watch(config.site.globs.js, { cwd: config.site.src }, ['build-js']);
+  gulp.watch(config.site.paths.index, { cwd: config.site.src }, ['build-html']);
+  // gulp.watch(config.site.dest + '**/*').on("change", browserSync.reload);
 }
