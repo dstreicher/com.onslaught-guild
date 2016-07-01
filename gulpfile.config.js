@@ -12,15 +12,18 @@ var config = {
     src: 'src/',
     dest: 'dist/',
     globs: {
-      css: ['css/*.css'],
       sprites: ['img/sprites/*.png'],
       images: ['img/*.{png,jpg,gif}'],
-      js: ['js/*.js'],
+      js: ['js/**/*.js'],
       fonts: ['fonts/*.{eot,svg,ttf,woff,woff2}']
     },
     paths: {
+      scss: 'scss/stylesheet.scss',
       index: 'index.template.html'
     }
+  },
+  cleanCSS: {
+    compatibility: 'ie8'
   },
   autoprefixer: {
     browsers: ['last 2 versions']

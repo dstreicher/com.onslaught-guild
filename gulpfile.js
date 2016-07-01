@@ -55,10 +55,14 @@ function buildCSS() {
     .pipe(gulpif(!argv.dev, imagemin()))
     .pipe(gulp.dest(config.site.dest + 'img/'))
 
-  var css = merge(spriteData.css, gulp.src(config.site.globs.css, { cwd: config.site.src }))
+  var scss = gulp.src(config.site.paths.scss, { cwd: config.site.src })
+    .pipe(sass())
+    .on('error', sass.logError);
+
+  var css = merge(spriteData.css, scss)
     .pipe(concat('styles.css'))
     .pipe(autoprefixer(config.autoprefixer))
-    .pipe(gulpif(!argv.dev, cleanCSS({ compatibility: 'ie8' })))
+    .pipe(gulpif(!argv.dev, cleanCSS(config.cleanCSS)))
     .pipe(gulpif(!argv.dev, rename({ suffix: '.' + config.revision, extname: '.min.css' })))
     .pipe(gulp.dest(config.site.dest + 'css/'));
 
@@ -91,8 +95,7 @@ function buildHTML() {
 
 function serve() {
   browserSync.init(config.browserSync);
-  gulp.watch(config.site.globs.css, { cwd: config.site.src }, ['build-css']);
+  gulp.watch(config.site.paths.scss, { cwd: config.site.src }, ['build-css']);
   gulp.watch(config.site.globs.js, { cwd: config.site.src }, ['build-js']);
   gulp.watch(config.site.paths.index, { cwd: config.site.src }, ['build-html']);
-  // gulp.watch(config.site.dest + '**/*').on("change", browserSync.reload);
 }

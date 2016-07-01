@@ -1,5 +1,36 @@
+$deathknight: #C41F3B;
+$druid: #FF7D0A;
+$hunter: #ABD473;
+$mage: #69CCF0;
+$monk: #00FF96;
+$paladin: #F58CBA;
+$priest: #FFFFFF;
+$rogue: #FFF569;
+$shaman: #0070DE;
+$warlock: #9482C9;
+$warrior: #C79C6E;
+$demonhunter: #A330C9;
+$uncommon: #1EFF00;
+$rare: #0070DD;
+$epic: #A335EE;
+$legendary: #ff8000;
+
+$warning: #E92828;
+
+$white: #FFFFFF;
+$black: #000000;
+
+$light: #f1f1f1;
+$dark: #272727;
+$dark222: #222222;
+$dark333: #333333;
+$primary: #0091E4;
+$secondary: #767676;
+
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(https://fonts.googleapis.com/css?family=Ruda:400,700,900);
+@import 'vendor/lightbox';
+@import 'vendor/rpg-awesome';
 
 @font-face {
   font-family: 'Origicide';
@@ -13,88 +44,77 @@
   font-style: normal;
 }
 
+@mixin label-color($color) {
+  color: $color;
+  border-color: $color;
+}
+
 .label-deathknight {
-  color: #C41F3B;
-  border-color: #C41F3B;
+  @include label-color($deathknight);
 }
 
 .label-druid {
-  color: #FF7D0A;
-  border-color: #FF7D0A;
+  @include label-color($druid);
 }
 
 .label-hunter {
-  color: #ABD473;
-  border-color: #ABD473;
+  @include label-color($hunter);
 }
 
 .label-mage {
-  color: #69CCF0;
-  border-color: #69CCF0;
+  @include label-color($mage);
 }
 
 .label-monk {
-  color: #00FF96;
-  border-color: #00FF96;
+  @include label-color($monk);
 }
 
 .label-paladin {
-  color: #F58CBA;
-  border-color: #F58CBA;
+  @include label-color($paladin);
 }
 
 .label-priest {
-  color: #FFFFFF;
-  border-color: #FFFFFF;
+  @include label-color($priest);
 }
 
 .label-rogue {
-  color: #FFF569;
-  border-color: #FFF569;
+  @include label-color($rogue);
 }
 
 .label-shaman {
-  color: #0070DE;
-  border-color: #0070DE;
+  @include label-color($shaman);
 }
 
 .label-warlock {
-  color: #9482C9;
-  border-color: #9482C9;
+  @include label-color($warlock);
 }
 
 .label-warrior {
-  color: #C79C6E;
-  border-color: #C79C6E;
+  @include label-color($warrior);
 }
 
 .label-demonhunter {
-  color: #A330C9;
-  border-color: #A330C9;
+  @include label-color($demonhunter);
 }
 
 .label-uncommon {
-  background-color: #1EFF00;
-  border-color: #1EFF00;
+  @include label-color($uncommon);
 }
 
 .label-rare {
-  background-color: #0070DD;
-  border-color: #0070DD;
+  @include label-color($rare);
 }
 
 .label-epic {
-  background-color: #A335EE;
-  border-color: #A335EE;
+  @include label-color($epic);
 }
 
 .label-legendary {
-  background-color: #ff8000;
-  border-color: #ff8000;
+  @include label-color($legendary);
 }
 
 .label-warn {
-  color: #E92828;
+  @include label-color($warning);
 }
 
 .p-t-20 {
@@ -114,8 +134,8 @@ body {
   padding-top: 50px;
   min-height: 1200px;
   font-family: "Ruda";
-  color: #f1f1f1;
-  background-color: #272727;
+  color: $light;
+  background-color: $dark;
 }
 
 .navbar-default {
@@ -125,7 +145,7 @@ body {
 
 .navbar-default .navbar-toggle {
   border: none;
-  color: #f1f1f1;
+  color: $light;
 }
 
 .navbar-default .navbar-collapse {
@@ -138,25 +158,25 @@ body {
 
 .navbar-default .navbar-brand {
   font-family: "Origicide";
-  color: #f1f1f1;
+  color: $light;
   transition: all .2s ease-in;
 }
 
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
-  color: #0091E4;
+  color: $primary;
 }
 
 .navbar-default .navbar-nav > li > a {
-  color: #f1f1f1;
+  color: $light;
   transition: all .2s ease-in;
 }
 
 .navbar-default .navbar-nav > li > a:focus {
-  color: #f1f1f1;
+  color: $light;
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a.active {
-  color: #0091E4;
+  color: $primary;
 }
 
 /*Lightbox CSS*/
@@ -176,7 +196,7 @@ body {
 }
 
 .image-link:hover, .image-link:focus {
-  background-color: #0091E4;
+  background-color: $primary;
   transition: none;
 }
 
@@ -188,7 +208,7 @@ body {
 
 .section-subtitle {
   font-weight: 800;
-  color: #767676;
+  color: $secondary;
   text-transform: uppercase;
 }
 
@@ -220,7 +240,7 @@ body {
   margin-top: 0;
   margin-bottom: 1em;
   padding-left: 15px;
-  color: #0091E4;
+  color: $primary;
   z-index: 2;
 }
 
@@ -268,7 +288,7 @@ body {
 }
 
 .raid-difficulty {
-  color: #f1f1f1;
+  color: $light;
   font-size: 1.2rem;
   margin: 0.5rem 0;
 }
@@ -287,7 +307,7 @@ body {
 .wow-progress h5 {
   font-weight: 800;
   font-size: 1.3rem;
-  color: #767676;
+  color: $secondary;
   text-transform: uppercase;
 }
 
@@ -305,7 +325,7 @@ body {
 
 #guild i {
   font-size: 4rem;
-  color: #767676;
+  color: $secondary;
 }
 
 #raiding {
@@ -342,7 +362,7 @@ body {
 }
 
 .discord-btn:hover, .discord-btn:focus {
-  background-color: #0091E4;
+  background-color: $primary;
 }
 
 #community p, #recruiting p {
@@ -355,7 +375,7 @@ body {
 }
 
 #recruiting .well {
-  background-color: #272727;
+  background-color: $dark;
   padding: 0px;
   border: none;
 }
@@ -380,11 +400,11 @@ body {
 
 #footer {
   height: 150px;
-  background-color: #f1f1f1;
+  background-color: $light;
 }
 
 #footer .container {
-  background-color: #f1f1f1;
+  background-color: $light;
   color: #222;
 }
 
@@ -461,5 +481,5 @@ body {
 
 /*Discord Widget CSS*/
 #discord-widget .widget-header {
-  background-color: #0091E4;
+  background-color: $primary;
 }
