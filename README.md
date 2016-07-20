@@ -19,5 +19,5 @@ npm run build
 ## Development
 
 ``` bash
-npm run build -- --dev
+npm run dev
 ```
