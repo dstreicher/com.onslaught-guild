@@ -29,6 +29,7 @@ var config = {
     browsers: ['last 2 versions']
   },
   browserSync: {
+    port: 8080,
     server: {
       baseDir: './dist/'
     }

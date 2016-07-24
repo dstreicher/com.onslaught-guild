@@ -134,6 +134,22 @@ body {
   background-color: $dark;
 }
 
+.btn-outline {
+  background: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  line-height: 1.33;
+  border: 2px solid $light;
+  border-radius: 4px;
+  transition: all .2s ease-in;
+  color: $light;
+  &:hover, &:focus {
+    border-color: $primary;
+    color: $primary;
+    background: none;
+  }
+}
+
 .navbar-default {
   background-color: $gray;
   border-color: $gray;
@@ -323,18 +339,6 @@ body {
   background-image: url(../img/community_bg.png);
   background-position: left;
   background-repeat: no-repeat;
-}
-
-.discord-btn {
-  background-color: #738bd7;
-  padding: 10px 15px;
-  font-size: 18px;
-  line-height: 1.33;
-  border-radius: 4px;
-  transition: all .2s ease-in;
-  &:hover, &:focus {
-    background-color: $primary;
-  }
 }
 
 #community p, #recruiting p {

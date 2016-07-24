@@ -1,5 +1,9 @@
 $(document).ready(function () {
 
+  $.getJSON('http://www.wowprogress.com/guild/us/lightning-s-blade/Onslaught/json_rank', function (data) {
+    console.log(data);
+  });
+
   lightbox.option({
     'resizeDuration': 300,
     'fadeDuration': 200
