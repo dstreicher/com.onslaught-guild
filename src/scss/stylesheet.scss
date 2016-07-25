@@ -30,7 +30,6 @@ $secondary: #767676;
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(https://fonts.googleapis.com/css?family=Ruda:400,700,900);
 @import 'vendor/lightbox';
-@import 'vendor/rpg-awesome';
 
 @font-face {
   font-family: 'Origicide';
@@ -126,12 +125,20 @@ $secondary: #767676;
   padding-bottom: 10px;
 }
 
+a {
+  color: $primary;
+}
+
 body {
   padding-top: 50px;
   min-height: 1200px;
   font-family: "Ruda";
   color: $light;
   background-color: $dark;
+}
+
+.text-primary {
+  color: $primary;
 }
 
 .btn-outline {
