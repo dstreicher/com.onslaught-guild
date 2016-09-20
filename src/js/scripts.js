@@ -34,4 +34,9 @@ $(document).ready(function () {
     speed: 750,
     currentClass: 'active'
   });
+
+  $('.tooltip-container').each(function () {
+    var title = $($(this).data('tooltip')).html();
+    $(this).tooltip({ html: true, placement: 'bottom', title: title });
+  });
 });

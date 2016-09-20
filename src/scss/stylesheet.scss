@@ -295,6 +295,14 @@ body {
 
 .progress {
   margin-bottom: 10px;
+  .progress-list-item {
+    display: block;
+    font-family: 'Ruda';
+    &.killed {
+      text-decoration: line-through;
+      color: $secondary;
+    }
+  }
 }
 
 .wow-progress {
