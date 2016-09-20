@@ -285,6 +285,9 @@ body {
   &.hfc {
     background-image: url(../img/hfc_screen.png);
   }
+  &.en {
+    background-image: url(../img/en_screen.png);
+  }
 }
 
 .raid-difficulty {
@@ -295,7 +298,9 @@ body {
 
 .progress {
   margin-bottom: 10px;
-  .progress-list-item {
+}
+
+.progress-list-item {
     display: block;
     font-family: 'Ruda';
     &.killed {
@@ -303,7 +308,6 @@ body {
       color: $secondary;
     }
   }
-}
 
 .wow-progress {
   i {
