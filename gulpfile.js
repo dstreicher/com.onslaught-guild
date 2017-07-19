@@ -62,8 +62,8 @@ function buildCSS() {
   var css = merge(spriteData.css, scss)
     .pipe(concat('styles.css'))
     .pipe(autoprefixer(config.autoprefixer))
-    .pipe(gulpif(!argv.dev, cleanCSS(config.cleanCSS)))
-    .pipe(gulpif(!argv.dev, rename({ suffix: '.' + config.revision, extname: '.min.css' })))
+    //.pipe(gulpif(!argv.dev, cleanCSS(config.cleanCSS)))
+    .pipe(gulpif(!argv.dev, rename({ suffix: '.' + config.revision, extname: '.css' })))
     .pipe(gulp.dest(config.site.dest + 'css/'));
 
   return merge(spritesheet, css)
@@ -86,7 +86,7 @@ function buildHTML() {
       replace('$js_ext', config.revision + '.min.js'),
       replace('$js_ext', 'js')))
     .pipe(gulpif(!argv.dev,
-      replace('$css_ext', config.revision + '.min.css'),
+      replace('$css_ext', config.revision + '.css'),
       replace('$css_ext', 'css')))
     .pipe(rename('index.html'))
     .pipe(gulp.dest(config.site.dest))
