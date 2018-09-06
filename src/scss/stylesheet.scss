@@ -227,13 +227,14 @@ body {
   .background {
     height: 400px;
     width: 100%;
-    background-image: url('../img/banner_background.jpg');
+    background-image: url('../img/banner_bfa.jpg');
     background-position: center;
     background-repeat: no-repeat;
   }
   .title {
     font-family: 'Origicide', Arial, sans-serif;
     font-size: 6em;
+    text-shadow: 5px 5px $dark;
     margin-top: 0.2em;
     margin-bottom: 0.1em;
     padding-left: 15px;
